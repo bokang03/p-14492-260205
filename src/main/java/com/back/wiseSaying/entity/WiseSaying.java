@@ -1,3 +1,5 @@
+package com.back.wiseSaying.entity;
+
 public class WiseSaying {
     private int id;
     private String saying;
@@ -32,4 +34,10 @@ public class WiseSaying {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    // 자신의 값을 검증하는 클래스는 자신 내부 클래스에서 검증하도록 만드는 것이 옳다.
+    public boolean isNew() {
+        return id == 0;
+    }
+
 }
