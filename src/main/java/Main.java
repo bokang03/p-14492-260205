@@ -19,6 +19,7 @@ public class Main {
         // 여기는 안나옴 (byteArrayOutputStream에 쌓이고 있음)
         System.out.println("hihi");
         System.out.println("bye");
+        System.out.println("ok");
 
         System.setOut(ORIGINAL_OUT); // 모티터로 출력 복원
 
