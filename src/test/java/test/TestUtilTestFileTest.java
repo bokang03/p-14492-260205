@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TestUtilTest {
+public class TestUtilTestFileTest {
 
     @Test
-    @DisplayName("TestUtil.genScanner()")
+    @DisplayName("test.TestUtil.genScanner()")
     void t1() {
         Scanner scanner = TestUtil.genScanner("""
                 등록
@@ -29,7 +29,7 @@ public class TestUtilTest {
     }
 
     @Test
-    @DisplayName("TestUtil.setOutByteArray()")
+    @DisplayName("test.TestUtil.setOutByteArray()")
     void t2() throws Exception {
         ByteArrayOutputStream byteArrayOutputStream = TestUtil.setOutByteArray();
 
@@ -37,7 +37,7 @@ public class TestUtilTest {
 
         String rst = byteArrayOutputStream.toString();
 
-        TestUtil.clearSetOutToByteArray(byteArrayOutputStream); // ?
+        TestUtil.clearSetOutToByteArray(byteArrayOutputStream);
 
         System.out.println("출력 결과 : " + rst);
 
