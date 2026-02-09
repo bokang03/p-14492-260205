@@ -32,8 +32,8 @@ public class WiseSayingService {
         wiseSayingRepository.save(wiseSaying);
     }
 
-    public List<WiseSaying> findListDesc() {
-        return wiseSayingRepository.findListDesc();
+    public List<WiseSaying> findListDesc(String kw) {
+        return wiseSayingRepository.findByKeywordOrderByDesc(kw);
     }
 
     public WiseSaying findByIdOrNull(int id) {
