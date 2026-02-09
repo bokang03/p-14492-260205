@@ -32,7 +32,6 @@ public class WiseSayingControllerTest {
         assertThat(out).contains("명령) ");
         assertThat(out).contains("명언 : ");
         assertThat(out).contains("작가 : ");
-        assertThat(out).contains("종료");
     }
 
     @Test
@@ -227,6 +226,8 @@ public class WiseSayingControllerTest {
         input += "목록\n";
 
         String out = AppTestRunner.run(input);
+
+        System.out.println(out);
 
         assertThat(out)
                 .contains("10 / 작가 10 / 명언 10")

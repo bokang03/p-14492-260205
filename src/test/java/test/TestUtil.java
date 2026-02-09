@@ -24,6 +24,7 @@ public class TestUtil {
         return byteArrayOutputStream;
     }
 
+    // 배열로 값을 받다가 모니터에 출력할 때 사용한다.
     public static void clearSetOutToByteArray(ByteArrayOutputStream outputStream) throws Exception {
         System.setOut(ORIGINAL_OUT);
         outputStream.close();
