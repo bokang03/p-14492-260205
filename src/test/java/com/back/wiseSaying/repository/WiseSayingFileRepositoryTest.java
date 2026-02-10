@@ -34,7 +34,7 @@ public class WiseSayingFileRepositoryTest {
     @Test
     @DisplayName("명언 저장")
     void t1() {
-        WiseSaying wiseSaying = new WiseSaying(0,"꿈을 지녀라. 그러면 어려운 현실을 이길 수 있다.", "괴테");
+        WiseSaying wiseSaying = new WiseSaying(0, "꿈을 지녀라. 그러면 어려운 현실을 이길 수 있다.", "괴테");
 
         wiseSayingFileRepository.save(wiseSaying);
 
@@ -126,6 +126,7 @@ public class WiseSayingFileRepositoryTest {
                         wiseSaying2,
                         wiseSaying3
                 );
+
     }
 
     @Test
@@ -141,13 +142,14 @@ public class WiseSayingFileRepositoryTest {
         WiseSaying wiseSaying3 = new WiseSaying("꿈은 현실이 된다.", "작자미상");
         wiseSayingFileRepository.save(wiseSaying3);
 
-        PageDto pageDto = wiseSayingFileRepository.findByContentContainingDesc("꿈", 5, 1);
+        PageDto pageDto = wiseSayingFileRepository.findByContentContainingDesc("꿈", 1, 5);
 
         assertThat(pageDto.getContent())
                 .containsExactly(
                         wiseSaying3,
                         wiseSaying1
                 );
+
     }
 
     @Test
