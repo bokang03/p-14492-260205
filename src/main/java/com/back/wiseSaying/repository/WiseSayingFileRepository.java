@@ -7,6 +7,10 @@ import java.util.Map;
 
 public class WiseSayingFileRepository {
 
+    public void clear() {
+        Util.file.delete("db/wiseSaying");
+    }
+
     public WiseSaying save(WiseSaying wiseSaying) {
 
         if (wiseSaying.isNew()) {

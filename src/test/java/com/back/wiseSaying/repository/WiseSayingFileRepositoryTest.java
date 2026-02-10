@@ -2,6 +2,8 @@ package com.back.wiseSaying.repository;
 
 import com.back.global.AppContext;
 import com.back.wiseSaying.entity.WiseSaying;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +18,16 @@ public class WiseSayingFileRepositoryTest {
         wiseSayingFileRepository = AppContext.wiseSayingFileRepository;
     }
 
+    @BeforeEach
+    public void beforeClear() {
+        wiseSayingFileRepository.clear();
+    }
+
+    @AfterEach
+    public void afterClear() {
+        wiseSayingFileRepository.clear();
+    }
+
     @Test
     @DisplayName("명언 저장")
     void t1() {
@@ -24,6 +36,8 @@ public class WiseSayingFileRepositoryTest {
         wiseSayingFileRepository.save(wiseSaying);
 
         WiseSaying foundedWiseSaying = wiseSayingFileRepository.findByIdOrNull(1);
+        System.out.println(wiseSaying);
+        System.out.println(foundedWiseSaying);
 
         assertThat(foundedWiseSaying).isEqualTo(wiseSaying);
 
@@ -46,6 +60,5 @@ public class WiseSayingFileRepositoryTest {
 
 
     }
-
 
 }
