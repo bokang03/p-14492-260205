@@ -69,4 +69,6 @@ public class WiseSayingRepository {
 
         return new PageDto(page, pageSize, totalCount, pagedFilteredContent);
     }
+
+
 }
