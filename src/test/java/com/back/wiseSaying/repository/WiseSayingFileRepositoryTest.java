@@ -1,5 +1,6 @@
 package com.back.wiseSaying.repository;
 
+import com.back.global.AppConfig;
 import com.back.global.AppContext;
 import com.back.wiseSaying.dto.PageDto;
 import com.back.wiseSaying.entity.WiseSaying;
@@ -17,6 +18,7 @@ public class WiseSayingFileRepositoryTest {
     private WiseSayingFileRepository wiseSayingFileRepository;
 
     public WiseSayingFileRepositoryTest() {
+        AppConfig.setTestMode();
         AppContext.init();
         wiseSayingFileRepository = AppContext.wiseSayingFileRepository;
     }
@@ -165,7 +167,7 @@ public class WiseSayingFileRepositoryTest {
         WiseSaying wiseSaying3 = new WiseSaying("꿈은 현실이 된다.", "작자미상");
         wiseSayingFileRepository.save(wiseSaying3);
 
-        PageDto pageDto = wiseSayingFileRepository.findByAuthorContainingDesc("테", 5, 1);
+        PageDto pageDto = wiseSayingFileRepository.findByAuthorContainingDesc("테", 1, 5);
 
         assertThat(pageDto.getContent())
                 .containsExactly(
